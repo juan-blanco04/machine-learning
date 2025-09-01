@@ -140,164 +140,273 @@ def rama_persona():
     print("PERSONA/PERSONAJE NO CLASIFICADO")
 
 def rama_fenomeno():
-    """Rama COMPLETA para fenómenos y energías"""
-    print("\n--- CATEGORÍA: FENÓMENOS/ENERGÍA ---")
     
-    # PRIMER NIVEL: Clasificación general
+    
     r = pedir_si_no("Q3: ¿Es un FENÓMENO NATURAL observable?")
     if r == "s":
-        # FENÓMENOS NATURALES
-        r = pedir_si_no("Q4: ¿Está relacionado con la ATMÓSFERA o CLIMA?")
+        r = pedir_si_no("Q4: ¿Es METEOROLÓGICO/ATMOSFÉRICO?")
         if r == "s":
-            # FENÓMENOS METEOROLÓGICOS
-            r = pedir_si_no("Q5: ¿Involucra AGUA o PRECIPITACIÓN?")
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con la PRECIPITACIÓN?")
             if r == "s":
-                r = pedir_si_no("Q6: ¿Es en estado LÍQUIDO?")
-                if r == "s":
-                    print("PRECIPITACIÓN LÍQUIDA: lluvia, llovizna, rocío, garúa")
-                else:
-                    r = pedir_si_no("Q6: ¿Es en estado SÓLIDO?")
-                    if r == "s":
-                        print("PRECIPITACIÓN SÓLIDA: nieve, granizo, aguanieve, cellisca")
-                    else:
-                        print("FENÓMENOS HÚMEDOS: humedad, condensación, evaporación")
-            else:
-                r = pedir_si_no("Q5: ¿Involucra VIENTO o AIRE?")
-                if r == "s":
-                    r = pedir_si_no("Q6: ¿Es de ALTA INTENSIDAD?")
-                    if r == "s":
-                        print("FENÓMENOS EÓLICOS INTENSOS: huracán, tornado, tifón, ciclón")
-                    else:
-                        print("FENÓMENOS EÓLICOS: viento, brisa, ventisca, ráfaga")
-                else:
-                    r = pedir_si_no("Q5: ¿Involucra TEMPERATURA?")
-                    if r == "s":
-                        print("FENÓMENOS TÉRMICOS: calor, frío, ola de calor, helada")
-                    else:
-                        r = pedir_si_no("Q5: ¿Involucra ELECTRICIDAD ATMOSFÉRICA?")
-                        if r == "s":
-                            print("FENÓMENOS ELÉCTRICOS: rayo, relámpago, trueno, tormenta eléctrica")
-                        else:
-                            r = pedir_si_no("Q5: ¿Involucra OPTICA ATMOSFÉRICA?")
-                            if r == "s":
-                                print("FENÓMENOS ÓPTICOS: arcoíris, halo, espejismo, parhelio")
-                            else:
-                                print("FENÓMENOS ATMOSFÉRICOS: presión atmosférica, frente climático")
-            return
-        
-        r = pedir_si_no("Q4: ¿Es un FENÓMENO GEOLÓGICO?")
-        if r == "s":
-            r = pedir_si_no("Q5: ¿Involucra MOVIMIENTO TERRESTRE?")
+                print("METEOROLÓGICOS · PRECIPITACIÓN: lluvia, nieve, granizo, aguanieve, rocío")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con el VIENTO?")
             if r == "s":
-                print("FENÓMENOS SÍSMICOS: terremoto, temblor, tsunami, maremoto")
-            else:
-                r = pedir_si_no("Q5: ¿Involucra ACTIVIDAD VOLCÁNICA?")
-                if r == "s":
-                    print("FENÓMENOS VOLCÁNICOS: erupción, lava, ceniza, fumarola")
-                else:
-                    r = pedir_si_no("Q5: ¿Involucra EROSIÓN?")
-                    if r == "s":
-                        print("FENÓMENOS DE EROSIÓN: deslizamiento, avalancha, derrumbe")
-                    else:
-                        print("FENÓMENOS GEOLÓGICOS: formación de montañas, deriva continental")
-            return
-        
-        r = pedir_si_no("Q4: ¿Es un FENÓMENO ASTRONÓMICO?")
-        if r == "s":
-            r = pedir_si_no("Q5: ¿Involucra CUERPOS CELESTES?")
+                print("METEOROLÓGICOS · VIENTO: brisa, ventisca, huracán, tornado, tifón, ciclón")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con FENÓMENOS ELÉCTRICOS?")
             if r == "s":
-                print("FENÓMENOS ASTRONÓMICOS: eclipse, lluvia de estrellas, conjunción, oposición")
-            else:
-                r = pedir_si_no("Q5: ¿Es un FENÓMENO LUMINOSO?")
-                if r == "s":
-                    print("FENÓMENOS LUMINOSOS: aurora boreal, luz zodiacal, supernova")
-                else:
-                    print("FENÓMENOS ESPACIALES: agujero negro, nebulosa, galaxia")
+                print("METEOROLÓGICOS · ELÉCTRICOS: rayo, relámpago, trueno, tormenta eléctrica")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con TEMPERATURA?")
+            if r == "s":
+                print("METEOROLÓGICOS · TÉRMICOS: calor, frío, ola de calor, helada, punto de rocío")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con EFECTOS ÓPTICOS?")
+            if r == "s":
+                print("METEOROLÓGICOS · ÓPTICOS: arcoíris, halo, espejismo, parhelio, corona solar")
+                return
+            print("METEOROLÓGICOS · PRESIÓN: alta presión, baja presión, frente climático")
             return
         
-        r = pedir_si_no("Q4: ¿Es un FENÓMENO HIDROLÓGICO?")
+        r = pedir_si_no("Q4: ¿Es GEOLÓGICO/TERRESTRE?")
         if r == "s":
-            print("FENÓMENOS HIDROLÓGICOS: marea, corriente, ola, inundación, sequía")
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con SISMOS o movimiento terrestre?")
+            if r == "s":
+                print("GEOLÓGICOS · SÍSMICOS: terremoto, temblor, tsunami, maremoto")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con VOLCANES?")
+            if r == "s":
+                print("GEOLÓGICOS · VOLCÁNICOS: erupción, lava, ceniza, fumarola, magma")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con EROSIÓN/DERRUMBES?")
+            if r == "s":
+                print("GEOLÓGICOS · EROSIÓN: deslizamiento, avalancha, derrumbe, alud")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con FORMACIÓN del relieve?")
+            if r == "s":
+                print("GEOLÓGICOS · FORMACIÓN: montañas, valles, cañones, placas tectónicas")
+                return
+            print("GEOLÓGICOS · SUBSUELO: magma, mineralización, géiser, termal")
             return
         
-        r = pedir_si_no("Q4: ¿Es un FENÓMENO BIOLÓGICO?")
+        r = pedir_si_no("Q4: ¿Es HIDROLÓGICO/ACUÁTICO?")
         if r == "s":
-            print("FENÓMENOS BIOLÓGICOS: fotosíntesis, migración, hibernación, eclosión")
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con MAREAS?")
+            if r == "s":
+                print("HIDROLÓGICOS · MAREAS: marea alta, marea baja, maremoto")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con CORRIENTES?")
+            if r == "s":
+                print("HIDROLÓGICOS · CORRIENTES: corriente marina, corriente fluvial, remolino")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con OLAS/MAR?")
+            if r == "s":
+                print("HIDROLÓGICOS · OLAS: olas, tsunami, marejada, resaca")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con el CICLO DEL AGUA?")
+            if r == "s":
+                print("HIDROLÓGICOS · CICLO DEL AGUA: evaporación, condensación, precipitación, escorrentía")
+                return
+            print("HIDROLÓGICOS · ESTADOS/EVENTOS: congelación, deshielo, inundación, sequía")
+            return
+        
+        r = pedir_si_no("Q4: ¿Es ASTRONÓMICO/ESPACIAL?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Se refiere al ESPACIO/medio?")
+            if r == "s":
+                print("ASTRONÓMICOS · ESPACIO: vacío cósmico, medio interestelar, gravedad cero")
+                return
+            r = pedir_si_no("Q5: ¿Se refiere a CUERPOS/EVENTOS orbitales?")
+            if r == "s":
+                print("ASTRONÓMICOS · CUERPOS: eclipse, conjunción, oposición, tránsito")
+                return
+            r = pedir_si_no("Q5: ¿Es un EVENTO astrofísico?")
+            if r == "s":
+                print("ASTRONÓMICOS · EVENTOS: supernova, agujero negro, nebulosa, galaxia")
+                return
+            r = pedir_si_no("Q5: ¿Es un FENÓMENO LUMINOSO?")
+            if r == "s":
+                print("ASTRONÓMICOS · LUMINOSOS: aurora boreal, luz zodiacal, lluvia de estrellas")
+                return
+            print("ASTRONÓMICOS · ORBITALES: rotación, traslación, perihelio, afelio")
+            return
+        
+        r = pedir_si_no("Q4: ¿Es BIOLÓGICO/ECOLÓGICO?")
+        if r == "s":
+            
+            r = pedir_si_no("Q5: ¿Está relacionado con CICLOS biológicos?")
+            if r == "s":
+                print("BIOLÓGICOS · CICLOS: fotosíntesis, respiración, descomposición")
+                return
+            r = pedir_si_no("Q5: ¿Está relacionado con COMPORTAMIENTOS?")
+            if r == "s":
+                print("BIOLÓGICOS · COMPORTAMIENTO: migración, hibernación, estivación, eclosión")
+                return
+            r = pedir_si_no("Q5: ¿Es un FENÓMENO ECOLÓGICO?")
+            if r == "s":
+                print("BIOLÓGICOS · ECOLÓGICOS: sucesión, simbiosis, depredación, competencia")
+                return
+            print("BIOLÓGICOS · BIOLUMINISCENCIA: luz natural en seres vivos")
             return
         
         print("FENÓMENO NATURAL NO ESPECIFICADO")
         return
     
-    # SEGUNDO NIVEL: ENERGÍAS
+   
     r = pedir_si_no("Q3: ¿Es una FORMA DE ENERGÍA?")
     if r == "s":
-        r = pedir_si_no("Q4: ¿Es energía TÉRMICA?")
+        r = pedir_si_no("Q4: ¿Es TÉRMICA?")
         if r == "s":
-            print("ENERGÍA TÉRMICA: calor, temperatura, combustión, conducción")
+            print("ENERGÍA · TÉRMICA: calor, temperatura, conducción, convección, radiación")
             return
-        
-        r = pedir_si_no("Q4: ¿Es energía ELÉCTRICA/MAGNÉTICA?")
+        r = pedir_si_no("Q4: ¿Es ELÉCTRICA?")
         if r == "s":
-            print("ENERGÍA ELÉCTRICA/MAGNÉTICA: electricidad, magnetismo, corriente, campo electromagnético")
+            print("ENERGÍA · ELÉCTRICA: electricidad, corriente, voltaje, resistencia, circuito")
             return
-        
-        r = pedir_si_no("Q4: ¿Es energía LUMINOSA/RADIANTE?")
+        r = pedir_si_no("Q4: ¿Es MAGNÉTICA?")
         if r == "s":
-            print("ENERGÍA RADIANTE: luz, radiación, espectro electromagnético, fotones")
+            print("ENERGÍA · MAGNÉTICA: magnetismo, campo magnético, electromagnetismo")
             return
-        
-        r = pedir_si_no("Q4: ¿Es energía SONORA?")
+        r = pedir_si_no("Q4: ¿Es LUMINOSA/RADIANTE?")
         if r == "s":
-            print("ENERGÍA SONORA: sonido, onda sonora, eco, resonancia")
+            print("ENERGÍA · LUMINOSA/RADIANTE: luz, fotones, espectro electromagnético, radiación")
             return
-        
-        r = pedir_si_no("Q4: ¿Es energía MECÁNICA?")
+        r = pedir_si_no("Q4: ¿Es SONORA?")
         if r == "s":
-            print("ENERGÍA MECÁNICA: movimiento, fuerza, trabajo, potencia")
+            print("ENERGÍA · SONORA: sonido, onda sonora, eco, resonancia, ultrasonido")
             return
-        
-        r = pedir_si_no("Q4: ¿Es energía QUÍMICA/NUCLEAR?")
+        r = pedir_si_no("Q4: ¿Es MECÁNICA?")
         if r == "s":
-            print("ENERGÍA QUÍMICA/NUCLEAR: reacción química, fisión, fusión, radiactividad")
+            print("ENERGÍA · MECÁNICA: movimiento, fuerza, trabajo, potencia, cinética, potencial")
             return
-        
-        print("ENERGÍA NO ESPECIFICADA")
+        r = pedir_si_no("Q4: ¿Es QUÍMICA?")
+        if r == "s":
+            print("ENERGÍA · QUÍMICA: reacción química, combustión, oxidación, fermentación")
+            return
+        r = pedir_si_no("Q4: ¿Es NUCLEAR?")
+        if r == "s":
+            print("ENERGÍA · NUCLEAR: fisión, fusión, radiactividad, desintegración")
+            return
+        print("ENERGÍA · CONCEPTOS COSMOLÓGICOS: energía oscura, materia oscura")
         return
     
-    # TERCER NIVEL: FENÓMENOS FÍSICOS
+    # TERCER NIVEL: FENÓMENOS FÍSICOS FUNDAMENTALES
     r = pedir_si_no("Q3: ¿Es un FENÓMENO FÍSICO fundamental?")
     if r == "s":
-        r = pedir_si_no("Q4: ¿Está relacionado con FUERZAS?")
+        r = pedir_si_no("Q4: ¿Está relacionado con la ESTRUCTURA ATÓMICA?")
         if r == "s":
-            print("FUERZAS FUNDAMENTALES: gravedad, electromagnetismo, fuerza nuclear")
+            r = pedir_si_no("Q5: ¿Con ÁTOMOS?")
+            if r == "s":
+                print("FÍSICOS · ÁTOMOS: protones, neutrones, electrones")
+                return
+            r = pedir_si_no("Q5: ¿Con PARTÍCULAS subatómicas?")
+            if r == "s":
+                print("FÍSICOS · PARTÍCULAS: quark, leptón, bosón, hadrón")
+                return
+            r = pedir_si_no("Q5: ¿Con ESTADOS exóticos?")
+            if r == "s":
+                print("FÍSICOS · ESTADOS: plasma, condensado Bose-Einstein")
+                return
+            print("FÍSICOS · INTERACCIONES: fuerza nuclear fuerte/débil")
             return
         
-        r = pedir_si_no("Q4: ¿Está relacionado con MOVIMIENTO?")
+        r = pedir_si_no("Q4: ¿Está relacionado con los ESTADOS DE LA MATERIA?")
         if r == "s":
-            print("FENÓMENOS DE MOVIMIENTO: inercia, aceleración, fricción, momentum")
+            r = pedir_si_no("Q5: ¿SÓLIDO?")
+            if r == "s":
+                print("FÍSICOS · SÓLIDO: cristalino, amorfo, polímero")
+                return
+            r = pedir_si_no("Q5: ¿LÍQUIDO?")
+            if r == "s":
+                print("FÍSICOS · LÍQUIDO: viscoso, fluido, superfluido")
+                return
+            r = pedir_si_no("Q5: ¿GASEOSO?")
+            if r == "s":
+                print("FÍSICOS · GASEOSO: comprimido, ideal, real")
+                return
+            print("FÍSICOS · PLASMA: ionizado, conductor")
             return
         
-        r = pedir_si_no("Q4: ¿Está relacionado con MATERIA?")
+        r = pedir_si_no("Q4: ¿Está relacionado con las FUERZAS FUNDAMENTALES?")
         if r == "s":
-            print("FENÓMENOS DE LA MATERIA: estados de la materia, cambio de fase, densidad")
+            r = pedir_si_no("Q5: ¿GRAVEDAD?")
+            if r == "s":
+                print("FÍSICOS · GRAVEDAD: atracción, curvatura del espaciotiempo")
+                return
+            r = pedir_si_no("Q5: ¿ELECTROMAGNETISMO?")
+            if r == "s":
+                print("FÍSICOS · ELECTROMAGNETISMO: campo EM, luz, electricidad, magnetismo")
+                return
+            r = pedir_si_no("Q5: ¿NUCLEAR FUERTE?")
+            if r == "s":
+                print("FÍSICOS · NUCLEAR FUERTE: núcleos atómicos, hadrones")
+                return
+            print("FÍSICOS · NUCLEAR DÉBIL: desintegración radiactiva")
             return
         
-        print("FENÓMENO FÍSICO NO ESPECIFICADO")
+        r = pedir_si_no("Q4: ¿Está relacionado con FENÓMENOS CUÁNTICOS?")
+        if r == "s":
+            r = pedir_si_no("Q5: ¿Dualidad ONDA-PARTÍCULA?")
+            if r == "s":
+                print("CUÁNTICOS · DUALIDAD: onda-partícula")
+                return
+            r = pedir_si_no("Q5: ¿Principios (incertidumbre/exclusión)?")
+            if r == "s":
+                print("CUÁNTICOS · PRINCIPIOS: incertidumbre, exclusión")
+                return
+            r = pedir_si_no("Q5: ¿ENTRELAZAMIENTO?")
+            if r == "s":
+                print("CUÁNTICOS · ENTRELAZAMIENTO: no-localidad")
+                return
+            print("CUÁNTICOS · TÚNELES: efecto túnel cuántico")
+            return
+        
+        print("FENÓMENO FÍSICO FUNDAMENTAL NO ESPECIFICADO")
         return
     
     # CUARTO NIVEL: FENÓMENOS QUÍMICOS
     r = pedir_si_no("Q3: ¿Es un FENÓMENO QUÍMICO?")
     if r == "s":
-        print("FENÓMENOS QUÍMICOS: reacción, oxidación, combustión, fermentación")
+        r = pedir_si_no("Q4: ¿Es una REACCIÓN?")
+        if r == "s":
+            print("QUÍMICOS · REACCIONES: síntesis, descomposición, sustitución, combustión")
+            return
+        r = pedir_si_no("Q4: ¿Es un EQUILIBRIO/INTERACCIÓN?")
+        if r == "s":
+            print("QUÍMICOS · EQUILIBRIOS: químico, ácido-base, redox, solubilidad")
+            return
+        r = pedir_si_no("Q4: ¿Tiene que ver con ESTADOS dispersos?")
+        if r == "s":
+            print("QUÍMICOS · ESTADOS: coloide, suspensión, emulsión, solución")
+            return
+        print("QUÍMICOS · PROPIEDADES: pH, conductividad, reactividad, catálisis")
         return
     
-    # QUINTO NIVEL: FENÓMENOS HUMANOS
+    # QUINTO NIVEL: FENÓMENOS HUMANOS/SOCIALES (opcional)
     r = pedir_si_no("Q3: ¿Es un FENÓMENO SOCIAL o HUMANO?")
     if r == "s":
-        print("FENÓMENOS SOCIALES: globalización, migración, revolución, tendencia")
+        r = pedir_si_no("Q4: ¿Se refiere a GLOBALIZACIÓN?")
+        if r == "s":
+            print("SOCIALES · GLOBALIZACIÓN: económica, cultural, tecnológica")
+            return
+        r = pedir_si_no("Q4: ¿Se refiere a MIGRACIÓN?")
+        if r == "s":
+            print("SOCIALES · MIGRACIÓN: humana, animal, patrones")
+            return
+        r = pedir_si_no("Q4: ¿Se refiere a TENDENCIAS?")
+        if r == "s":
+            print("SOCIALES · TENDENCIAS: moda, pensamiento, comportamiento colectivo")
+            return
+        print("SOCIALES · REVOLUCIONES: industrial, tecnológica, social")
         return
     
     print("FENÓMENO/ENERGÍA NO CLASIFICADO")
+
 
 def rama_objeto():
     """Rama para objetos inanimados"""
