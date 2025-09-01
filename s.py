@@ -1,7 +1,7 @@
 """
     Practica 1: 20Q
 
-    Integrantes del eqipo:
+    Integrantes del 
     - Agreda Iparraguirre Rodrigo Imanol
     - Pimentel Gonzalez Ricardo Antonio
     - Taboada Montiel Enrique
